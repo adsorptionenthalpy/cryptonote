@@ -81,6 +81,7 @@ namespace Tools
       {
         assert(1 <= size && size <= sizeof(uint64_t));
 
+        uint64_t res = 0;
         switch (9 - size)
         {
         case 1:            res |= *data++; /* FALLTHRU */
