@@ -1,19 +1,18 @@
 // Copyright (c) 2011-2016 The Cryptonote developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #pragma once
 
 #include <cstdint>
 #include <fstream>
 #include <iomanip>
+#include <iostream>
 #include <list>
 #include <unordered_map>
 #include <string>
 #include <vector>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
-using namespace std;
 
 template<class Key, class T> class SwappedMap {
 private:
@@ -183,7 +182,7 @@ template<class Key, class T> bool SwappedMap<Key, T>::open(const std::string& it
 }
 
 template<class Key, class T> void SwappedMap<Key, T>::close() {
-  std::cout << "SwappedMap cache hits: " << m_cacheHits << ", misses: " << m_cacheMisses << " (" << std::fixed << std::setprecision(2) << static_cast<double>(m_cacheMisses) / (m_cacheHits + m_cacheMisses) * 100 << "%)" << std::endl;
+  //std::cout << "SwappedMap cache hits: " << m_cacheHits << ", misses: " << m_cacheMisses << " (" << std::fixed << std::setprecision(2) << static_cast<double>(m_cacheMisses) / (m_cacheHits + m_cacheMisses) * 100 << "%)" << std::endl;
 }
 
 template<class Key, class T> uint64_t SwappedMap<Key, T>::size() const {
